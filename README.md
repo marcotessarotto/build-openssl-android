@@ -2,6 +2,7 @@
 following official build instructions from https://wiki.openssl.org/index.php/Android 
 
 
+```
 wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz
 
 wget https://wiki.openssl.org/images/7/70/Setenv-android.sh
@@ -36,5 +37,9 @@ find . -name libcrypto.a
 
 readelf -h ./libcrypto.a | grep -i 'class\|machine' | head -2
 
+// take care: this installs cross compiled headers and libs in /usr/local/include/openssl etc
+
 sudo -E make install CC=$ANDROID_TOOLCHAIN/arm-linux-androideabi-gcc RANLIB=$ANDROID_TOOLCHAIN/arm-linux-androideabi-ranlib
+```
+
 
