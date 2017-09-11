@@ -1,5 +1,6 @@
 # build-openssl-android
-Build openssl library 1.1.0f on Android using NDK r15b
+following official build instructions from https://wiki.openssl.org/index.php/Android 
+
 
 wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz
 
@@ -34,4 +35,6 @@ make all
 find . -name libcrypto.a
 
 readelf -h ./libcrypto.a | grep -i 'class\|machine' | head -2
+
+sudo -E make install CC=$ANDROID_TOOLCHAIN/arm-linux-androideabi-gcc RANLIB=$ANDROID_TOOLCHAIN/arm-linux-androideabi-ranlib
 
