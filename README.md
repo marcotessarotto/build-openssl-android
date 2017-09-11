@@ -1,5 +1,5 @@
 # build-openssl-android
-Build openssl library 1.1.0f on Android using NDK 1.1.0f
+Build openssl library 1.1.0f on Android using NDK r15b
 
 wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz
 
