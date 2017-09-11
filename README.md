@@ -15,11 +15,11 @@ chmod a+x setenv-android.sh
 
 export ANDROID_NDK_ROOT=/opt/android/android-ndk-r15b
 
-// edit setenv-android.sh:
+# now edit setenv-android.sh and set:
 
-// _ANDROID_EABI="arm-linux-androideabi-4.9"
+# _ANDROID_EABI="arm-linux-androideabi-4.9"
 
-// _ANDROID_API="android-16"
+# _ANDROID_API="android-16"
 
 . ./setenv-android.sh
 
@@ -37,7 +37,7 @@ find . -name libcrypto.a
 
 readelf -h ./libcrypto.a | grep -i 'class\|machine' | head -2
 
-// take care: this installs cross compiled headers and libs in /usr/local/include/openssl etc
+# take care: this installs cross compiled headers and libs in /usr/local/include/openssl /usr/local/lib/ etc
 
 sudo -E make install CC=$ANDROID_TOOLCHAIN/arm-linux-androideabi-gcc RANLIB=$ANDROID_TOOLCHAIN/arm-linux-androideabi-ranlib
 ```
